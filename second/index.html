@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+</head>
+<body>
+        <h1>Dom Special</h1>
+        <!-- option-1 -->
+        <button title="This is tooltip" onclick="console.log(7)">Click Me</button>
+        <button onclick="console.log(65)">Another Button</button>
+        <button onclick="document.body.style.background ='yellow'">Make Yellow</button>
+        <!-- option-2 -->
+        <button onclick="makeRed()">Make red</button>
+        <!-- option-3 -->
+        <button id="blue">Make Blue</button>
+        <!-- option-4 -->
+        <button id="make-pink">Make Pink</button>
+
+        <button id="make-golden-rod">Make Golden Rod</button>
+        <script src="event.js"></script>
+        <script>
+                // <!-- option-2 -->
+                function makeRed(){
+                        document.body.style.background= 'red';
+                }
+                // <!-- option-3 -->
+                const blue_btn = document.getElementById('blue');
+                blue_btn.onclick = makeBlue;
+                function makeBlue(){
+                        document.body.style.background ='blue';
+                }
+                // <!-- option-4 -->
+                const pink = document.getElementById('make-pink');
+                pink.addEventListener('click',make_pink)
+
+                function make_pink(){
+                        document.body.style.background ='pink';
+                }
+
+                document.getElementById('make-golden-rod').addEventListener('click',function golden(){
+                        document.body.style.background ='goldenrod';
+                })
+
+        </script>
+</body>
+</html>
